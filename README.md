@@ -12,17 +12,20 @@ This script creates/overwrites the accounts.json file in Prism Launcher's config
 # ✅ Tested On
 * Prism Launcher Version: [9.4](https://github.com/PrismLauncher/PrismLauncher/releases/tag/9.4) (Recommended)
 
-* Operating System: Windows 10/11
+* Operating System:
+* Windows 10/11
+* Linux
 
 # 📋 Prerequisites
-* Windows
+* Windows or Linux
 
 * Prism Launcher installed
 
 * PowerShell
+* Bash
 
 # 🚀 Usage
-Just run the script in powershell...
+Just run the script in powershell... (For Windows)
 ```
 $accountsObj = @{
     accounts = @(
@@ -37,6 +40,13 @@ $accountsObj = @{
     formatVersion = 3
 }
 $accountsObj | ConvertTo-Json -Compress -Depth 10 | Set-Content -Path "$env:APPDATA\PrismLauncher\accounts.json" -Encoding utf8 -Force
+```
+
+Or in Linux
+
+```bash
+chmod +x ./setup.sh
+./setup.sh
 ```
 
 # 🔀 Alternatively
